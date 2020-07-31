@@ -8,13 +8,13 @@ const
   folder = "rules/"
 
 var
-  unixRules = ""
-  phpRules = ""
-  emailRules = ""
-  htmlRules = ""
-  javaRules = ""
-  jsRules = ""
-  multiOSRules = ""
+  unixRules = "import \"elf\"\nimport \"hash\"\n"
+  phpRules = "import \"elf\"\nimport \"hash\"\n"
+  emailRules = "import \"elf\"\nimport \"hash\"\n"
+  htmlRules = "import \"elf\"\nimport \"hash\"\n"
+  javaRules = "import \"elf\"\nimport \"hash\"\n"
+  jsRules = "import \"elf\"\nimport \"hash\"\n"
+  multiOSRules = "import \"elf\"\nimport \"hash\"\n"
   
 
 if not dirExists("ParrotRules"):
