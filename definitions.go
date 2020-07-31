@@ -82,10 +82,8 @@ type definitionExtensionType uint8
 
 // the default URLs for downloading the definitions
 const (
-	//kMAIN_DATABASE_URL  = "http://database.clamav.net/main.cvd"
-	//kDAILY_DATABASE_URL = "http://database.clamav.net/daily.cvd"
-	kMAIN_DATABASE_URL  = "https://sec51.com/definitions/main.cvd"
-	kDAILY_DATABASE_URL = "https://sec51.com/definitions/daily.cvd"
+	kMAIN_DATABASE_URL  = "http://database.clamav.net/main.cvd"
+	kDAILY_DATABASE_URL = "http://database.clamav.net/daily.cvd"
 )
 
 // The definition types (main, daily for now)
