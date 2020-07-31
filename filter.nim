@@ -24,29 +24,29 @@ for kind, path in walkDir(folder):
   echo "Checking " & path
   var
       ruleText = ""
-      platform = ""
+      ruleName = ""
 
   for line in lines(path):
     ruleText &= line & "\n"
     if line.startsWith("rule "):
-      platform = line.split(" ")[1]
+      ruleName = line.split(" ")[1]
     elif line.startsWith("}"):
-      if platform.startsWith("Unix"):
+      if ruleName.startsWith("Unix") and not contains(unixRules, ruleName):
         unixRules &= "\n" & ruletext
-      elif platform.startsWith("Php"):
+      elif ruleName.startsWith("Php") and not contains(phpRules, ruleName):
         phpRules &= "\n" & ruletext
-      elif platform.startsWith("Email"):
-        phpRules &= "\n" & ruletext
-      elif platform.startsWith("Html"):
-        phpRules &= "\n" & ruletext
-      elif platform.startsWith("Java"):
-        phpRules &= "\n" & ruletext
-      elif platform.startsWith("Js"):
-        phpRules &= "\n" & ruletext
-      elif platform.startsWith("Multios"):
-        phpRules &= "\n" & ruletext
+      elif ruleName.startsWith("Email") and not contains(emailRules, ruleName):
+        emailRules &= "\n" & ruletext
+      elif ruleName.startsWith("Html") and not contains(htmlRules, ruleName):
+        htmlRules &= "\n" & ruletext
+      elif ruleName.startsWith("Java") and not contains(javaRules, ruleName):
+        javaRules &= "\n" & ruletext
+      elif ruleName.startsWith("Js") and not contains(jsRules, ruleName):
+        jsRules &= "\n" & ruletext
+      elif ruleName.startsWith("Multios") and not contains(multiOSRules, ruleName):
+        multiOSRules &= "\n" & ruletext
       ruleText = ""
-      platform = ""
+      ruleName = ""
 
 writeFile("ParrotRules/unix.yara", unixRules)
 writeFile("ParrotRules/php.yara", phpRules)
